@@ -25,6 +25,7 @@ Start by cloning the repository to your local machine.
 
 ```bash
 git clone https://github.com/Darab07/TransciptionApp
+``` ```
 git clone https://github.com/88hours/O365-Backend-Server
 ```
 

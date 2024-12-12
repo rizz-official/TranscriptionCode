@@ -1,18 +1,59 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Audio Recorder Add-in</title>
-    <link rel="stylesheet" href="taskpane.css">
-    <script src="./taskpane.js" defer></script>
-</head>
-<body>
-    <h1>Audio Recorder Add-in</h1>
-    <p>Use the buttons below to record audio:</p>
-    <button id="startRecording">Start Recording</button>
-    <button id="stopRecording" disabled>Stop Recording</button>
-    <p id="status">Press "Start Recording" to begin.</p>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="taskpane.css" />
+    <script src="https://cdn.socket.io/4.6.1/socket.io.min.js"></script>
+    <script src="taskpane.js" defer></script>
+    <title>Transcript</title>
+  </head>
+  <body>
+    <div class="container">
+      <header>Transcript</header>
+      <article>
+        <div class="audio-control">
+          <div class="flag">
+            <img
+              src="https://flagcdn.com/w20/us.png"
+              srcset="https://flagcdn.com/w40/us.png 2x"
+              width="20"
+              alt="United States"
+            />
+          </div>
+          <div class="button-container">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="16"
+              height="16"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"></path>
+              <path d="M19 10v2a7 7 0 0 1-14 0v-2"></path>
+              <line x1="12" y1="19" x2="12" y2="23"></line>
+              <line x1="8" y1="23" x2="16" y2="23"></line>
+            </svg>
+            <span>Start recording</span>
+          </div>
+        </div>
+        <div class="toggle-section">
+          <label class="switch">
+            <input type="checkbox" />
+            <span class="slider"></span>
+          </label>
+          <span class="stream-text">Stream to document</span>
+        </div>
+        <div class="transcript-section">
+          <label for="transcript">Transcript</label>
+          <textarea id="transcript" placeholder="The transcript will be shown here"></textarea>
+        </div>
+        <button class="generate-button">Generate</button>
+      </article>
+    </div>
+  </body>
 </html>
-
